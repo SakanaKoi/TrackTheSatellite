@@ -2,9 +2,13 @@ package com.example.trackthesattelite;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -17,12 +21,37 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class GraphActivity extends AppCompatActivity {
-    TextView linesA;
+    Button tempButton, deviationsButton;
+    TempGraph tempGraph;
+    DeviationsGraph deviationsGraph;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
-        linesA = findViewById(R.id.linesA);
+        tempButton = findViewById(R.id.tempButton);
+        deviationsButton = findViewById(R.id.deviationsButton);
+
+        tempGraph = new TempGraph();
+        deviationsGraph = new DeviationsGraph();
+        fragmentManager = getSupportFragmentManager();
+
+        tempButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.replace(R.id.container, tempGraph);
+                ft.commit();
+            }
+        });
+        deviationsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.replace(R.id.container, deviationsGraph);
+                ft.commit();
+            }
+        });
     }
 }

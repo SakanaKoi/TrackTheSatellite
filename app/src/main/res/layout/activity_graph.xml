@@ -7,8 +7,20 @@
     tools:context=".GraphActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/linesA"
+    <Button
+        android:id="@+id/tempButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Показать график температур"/>
+
+    <Button
+        android:id="@+id/deviationsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Показать график отклонений"/>
+
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

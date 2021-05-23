@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -17,10 +18,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
-    Button polyButton;
+    Button polyButton, graphButton;
     EditText newTemp;
     TextView newDeviant;
     Resources res;
+    Intent intent;
     Lagrange lagrange = new Lagrange();
 
     @Override
@@ -28,14 +30,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         res = getResources();
+        graphButton = findViewById(R.id.graphButton);
         polyButton = findViewById(R.id.polyButton);
         newTemp = findViewById(R.id.newTemp);
         newDeviant = findViewById(R.id.newDeviant);
         polyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double deviation = lagrange.polynomial(res, Integer.parseInt(newTemp.getText().toString()));
+                double deviation = lagrange.polynomial(res, Double.parseDouble(newTemp.getText().toString()));
                 newDeviant.setText(String.valueOf(deviation));
+            }
+        });
+        graphButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainActivity.this, GraphActivity.class);
+                startActivity(intent);
             }
         });
     }
