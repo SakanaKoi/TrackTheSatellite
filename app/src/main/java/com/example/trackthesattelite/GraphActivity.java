@@ -21,9 +21,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class GraphActivity extends AppCompatActivity {
-    Button tempButton, deviationsButton;
+    Button tempButton, deviationsButton, lagrangeButton;
     TempGraph tempGraph;
     DeviationsGraph deviationsGraph;
+    LagrangeGraph lagrangeGraph;
     FragmentManager fragmentManager;
 
     @Override
@@ -32,9 +33,11 @@ public class GraphActivity extends AppCompatActivity {
         setContentView(R.layout.activity_graph);
         tempButton = findViewById(R.id.tempButton);
         deviationsButton = findViewById(R.id.deviationsButton);
+        lagrangeButton = findViewById(R.id.lagrangeButton);
 
         tempGraph = new TempGraph();
         deviationsGraph = new DeviationsGraph();
+        lagrangeGraph = new LagrangeGraph();
         fragmentManager = getSupportFragmentManager();
 
         tempButton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +53,14 @@ public class GraphActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ft.replace(R.id.container, deviationsGraph);
+                ft.commit();
+            }
+        });
+        lagrangeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.replace(R.id.container, lagrangeGraph);
                 ft.commit();
             }
         });
