@@ -36,9 +36,7 @@ public class FileReader {
         int counter = rawTemps.size() % deviants.size();
         int sub = rawTemps.size() / deviants.size();
         double putIn;
-        int keys = 0;
         for (int i = 0; i < rawTemps.size(); i += sub) {
-            keys++;
             putIn = 0;
             for (int j = i; j < i + sub; j++) {
                 putIn += rawTemps.get(j);
@@ -54,10 +52,18 @@ public class FileReader {
             }
             temps.add(putIn);
         }
-        int sz = 0;
-        while (sz != temps.size() - 1) {
-            sz++;
-
+        int outCount = 0, inCount;
+        while (outCount != temps.size() - 2) {
+            inCount = outCount + 1;
+            while (inCount != temps.size() - 1) {
+                if (temps.get(inCount).equals(temps.get(outCount))) {
+                    temps.remove(inCount);
+                    deviants.remove(inCount);
+                }
+                inCount++;
+            }
+            outCount++;
         }
+        System.out.println(temps.toString());
     }
 }
