@@ -51,8 +51,6 @@ public class LagrangeGraph extends Fragment {
         Map.Entry<Double, Double>[] keyArray = keySet.toArray(new Map.Entry[keySet.size()]);
 
         for (int i = 0; i < keyArray.length; i++) {
-            System.out.println(keyArray[i].getKey());
-            System.out.println(lagrange.polynomial(res, keyArray[i].getKey()));
             series.appendData(new DataPoint(keyArray[i].getKey(), lagrange.polynomial(res, keyArray[i].getKey())), true, temp.size());
         }
         lagrangeGraph.addSeries(series);

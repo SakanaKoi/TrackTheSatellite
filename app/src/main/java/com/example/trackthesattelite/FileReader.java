@@ -66,7 +66,5 @@ public class FileReader {
             outCount++;
 
         }
-        System.out.println(temps.toString());
-        System.out.println(temps.size());
     }
 }
