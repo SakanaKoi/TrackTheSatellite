@@ -34,6 +34,12 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/lagrangeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Показать график изменения температур"/>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
