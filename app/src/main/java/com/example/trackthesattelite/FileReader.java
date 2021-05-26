@@ -50,6 +50,7 @@ public class FileReader {
             else {
                 putIn /= sub;
             }
+            putIn = Math.ceil(putIn * 10) / 10;
             temps.add(putIn);
         }
         int outCount = 0, inCount;
@@ -63,7 +64,9 @@ public class FileReader {
                 inCount++;
             }
             outCount++;
+
         }
         System.out.println(temps.toString());
+        System.out.println(temps.size());
     }
 }

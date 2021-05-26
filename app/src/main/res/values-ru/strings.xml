@@ -1,0 +1,9 @@
+<resources>
+    <string name="findNewValue">Найти отклонение</string>
+    <string name="typeNewX">Введите новое значение X</string>
+    <string name="graphs">Показать графики</string>
+    <string name="temperaturesGraph">Показать график температур</string>
+    <string name="deviationsGraph">Показать график отклонений</string>
+    <string name="lagrangeGraph">Показать график Лагранжа</string>
+    <string name="newDeviation">Новое отклонение:</string>
+</resources>

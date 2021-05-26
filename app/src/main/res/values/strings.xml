@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">TrackTheSattelite</string>
+    <string name="app_name" translatable="false">TrackTheSatellite</string>
+    <string name="findNewValue">Find new deviation</string>
+    <string name="typeNewX">Type new X value</string>
+    <string name="graphs">Show graphs</string>
+    <string name="temperaturesGraph">Show temperatures graph</string>
+    <string name="deviationsGraph">Show deviations graph</string>
+    <string name="lagrangeGraph">Show Lagrange graph</string>
+    <string name="newDeviation">New deviation:</string>
 </resources>

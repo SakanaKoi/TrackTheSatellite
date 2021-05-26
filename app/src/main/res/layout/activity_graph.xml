@@ -5,29 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GraphActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bgColor">
 
-    <Button
-        android:id="@+id/tempButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Показать график температур"/>
+        android:orientation="vertical"
+        android:layout_margin="20sp">
 
-    <Button
-        android:id="@+id/deviationsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Показать график отклонений"/>
+        <Button
+            android:id="@+id/tempButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/temperaturesGraph"/>
 
-    <Button
-        android:id="@+id/lagrangeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Показать график изменения температур"/>
+        <Button
+            android:id="@+id/deviationsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deviationsGraph"/>
+
+        <Button
+            android:id="@+id/lagrangeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lagrangeGraph"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginRight="20sp"/>
 
 </LinearLayout>
